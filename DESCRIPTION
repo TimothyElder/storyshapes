@@ -1,0 +1,12 @@
+Package: storyshapes
+Title: Shape of Stories
+Version: 0.0.1
+Description: A set of functions, palettes and options used for the shape_of_stories project, which can be applied to matrices of word embeddings and vectors of semantic dimensions.
+License: License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+NeedsCompilation: no
+Packaged: 2023-01-15 00:09:55 UTC; timothyelder
+Author: Timothy Elder [aut, cre]
+Maintainer: Timothy Elder <timothyelder@uchicago.edu>
