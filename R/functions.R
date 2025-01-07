@@ -1,6 +1,6 @@
 #' 2023 Color Palette
-#' 
-#' A color palette for the year 2023. 
+#'
+#' A color palette for the year 2023. They're not pastel
 #' @export
 twenty3pal <- c("#87CEEB", "#9FE2BF", "#FA8072",
                              "#CC8899", "#D3D3D3")
@@ -19,19 +19,26 @@ add <- function(x, y) {
   x + y
 }
 
-#' Drop Empty
+#' Drop Empty Rows
 #' 
-#' Drop empty rows from a dataframe
-#' @param x A dataframe, matrix, or vector.
+#' Drop empty rows from a dataframe, vector or matrix. This is distinguished
+#' from na.omit() which drops NAs. dropMT finds rows or elements that contain
+#' empty cells/elements and not NAs
+#' @param x A data.frame, matrix, or vector.
 #' @returns The same object without any empty rows
 #' @export
+#' 
+#' @examples
+#' V1 <- c(1, 2, 3, "", 5, 6, 7)
+#' V2 <- c("A", "B", "C", "", "E", "F", "G")
+#' df <- cbind(V1, V2)
 #' 
 dropMT <- function(x){
 
     if(class(x) != "data.frame" &
        class(x) != "character" &
        class(x) != "matrix"){
-       stop("object is not a dataframe, matrix or vector")
+       stop("Object is not a dataframe, matrix or vector")
     }
 
     if(class(x) == "character"){
@@ -299,3 +306,15 @@ standardize <- function(x){
 exponent <- function(x, power) {
     (abs(x) ^ power) * sign(x)
     }
+
+#' Suppress tick marks
+#' 
+#' For suppressing tick labels in ggplot
+#' @export
+#' @examples
+#' ggplot(df, aes(x = VAR1, y = VAR2)) + geom_scatter() + suppress_ticks
+suppress_ticks <- ggplot2::theme(axis.text.x = ggplot2::element_blank(), #remove x axis labels
+                        axis.ticks.x = ggplot2::element_blank(), #remove x axis ticks
+                        axis.text.y = ggplot2::element_blank(),  #remove y axis labels
+                        axis.ticks.y = ggplot2::element_blank()  #remove y axis ticks
+                        )

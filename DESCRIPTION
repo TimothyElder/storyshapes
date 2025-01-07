@@ -5,6 +5,7 @@ Description: A set of functions, palettes and options used for the shape_of_stor
 License: License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
+Imports: ggplot2, stopwords, dplyr, magrittr
 RoxygenNote: 7.1.2
 NeedsCompilation: no
 Packaged: 2023-01-15 00:09:55 UTC; timothyelder
